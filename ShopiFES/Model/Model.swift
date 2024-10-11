@@ -7,10 +7,25 @@
 
 import Foundation
 
-struct Product : Codable {
+struct Product : Identifiable, Codable {
     // printf("Hola mundo")
+    var id = UUID()
     var name: String
-    var precio: Float
+    var precio: Double
     var descripcion: String
     var image: String
+    
+    init(name: String, descripcion: String, precio: Double, image: String = "No image") {
+            self.name = name
+            self.descripcion = descripcion
+            self.precio = precio
+            self.image = image
+        }
+    
+    init(name: String, precio: Double, descripcion: String, image: String = "No image") {
+            self.name = name
+            self.descripcion = descripcion
+            self.precio = precio
+            self.image = image
+        }
 }

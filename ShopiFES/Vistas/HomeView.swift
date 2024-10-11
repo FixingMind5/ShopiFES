@@ -49,6 +49,7 @@ struct Home: View {
         ZStack(alignment: .top) {
             Color("Color-Orange")
                 .shadow(radius: 10)
+                .ignoresSafeArea()
             
             // Header
             VStack {
@@ -59,6 +60,7 @@ struct Home: View {
                     .font(.system(size: 23))
                     .kerning(15)
                 
+                // Buscador
                 ZStack {
                     RoundedRectangle(cornerRadius: 100)
                         .foregroundStyle(.white.opacity(0.5))
@@ -88,16 +90,26 @@ struct Home: View {
                         
                     }.padding(.horizontal, 30)
                 }.padding(.horizontal, 20)
-            }
-            
-            // Menu
-            VStack {
                 
+                // Menu
+                VStack {
+                    List(productos) { producto in
+                        HStack {
+                            VStack {
+                                Text(producto.name)
+                                Text(producto.descripcion)
+                            }
+                            
+                            Text("$\(producto.precio, specifier: "%.2f")")
+                        }
+                        
+                    }
+                }
             }
             
         }
-        .frame(height: 250)
-        .ignoresSafeArea()
+        
+        
     }
 }
 
