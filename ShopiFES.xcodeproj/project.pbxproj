@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		C68A06A82C855C8300B566D2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06A72C855C8300B566D2 /* ProfileView.swift */; };
 		C68A06AA2C855C9C00B566D2 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06A92C855C9C00B566D2 /* ShoppingCartView.swift */; };
 		C68A06AE2C85695300B566D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06AD2C85695300B566D2 /* Model.swift */; };
+		DF9759032CB8E40F00C3A891 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9759022CB8E40800C3A891 /* MapView.swift */; };
+		DF9759092CB90DDE00C3A891 /* LocationDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,13 @@
 		C68A06A72C855C8300B566D2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C68A06A92C855C9C00B566D2 /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
 		C68A06AD2C85695300B566D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DF9759022CB8E40800C3A891 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDeniedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		DF9759042CB9036400C3A891 /* Services */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Services; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C68A068A2C85327F00B566D2 /* Frameworks */ = {
@@ -69,6 +77,7 @@
 		C68A068F2C85327F00B566D2 /* ShopiFES */ = {
 			isa = PBXGroup;
 			children = (
+				DF9759042CB9036400C3A891 /* Services */,
 				C68A06AC2C85693A00B566D2 /* Model */,
 				C68A06AB2C8568F700B566D2 /* Vistas */,
 				C68A06942C85328200B566D2 /* Assets.xcassets */,
@@ -90,12 +99,14 @@
 			isa = PBXGroup;
 			children = (
 				C68A06A52C855C7200B566D2 /* SearchView.swift */,
+				DF9759022CB8E40800C3A891 /* MapView.swift */,
 				C68A06A72C855C8300B566D2 /* ProfileView.swift */,
 				C68A06A92C855C9C00B566D2 /* ShoppingCartView.swift */,
 				C68A06922C85327F00B566D2 /* ContentView.swift */,
 				C68A069F2C853F5800B566D2 /* LoginView.swift */,
 				C68A06A12C854F7400B566D2 /* SignupView.swift */,
 				C68A06A32C855BFC00B566D2 /* HomeView.swift */,
+				DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */,
 			);
 			path = Vistas;
 			sourceTree = "<group>";
@@ -123,6 +134,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				DF9759042CB9036400C3A891 /* Services */,
 			);
 			name = ShopiFES;
 			productName = ShopiFES;
@@ -180,8 +194,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C601A2082C93BBF6003D793C /* menu.swift in Sources */,
+				DF9759092CB90DDE00C3A891 /* LocationDeniedView.swift in Sources */,
 				C68A06AE2C85695300B566D2 /* Model.swift in Sources */,
 				C68A06A22C854F7400B566D2 /* SignupView.swift in Sources */,
+				DF9759032CB8E40F00C3A891 /* MapView.swift in Sources */,
 				C68A06A02C853F5800B566D2 /* LoginView.swift in Sources */,
 				C68A06932C85327F00B566D2 /* ContentView.swift in Sources */,
 				C68A06A42C855BFC00B566D2 /* HomeView.swift in Sources */,
@@ -322,6 +338,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos saber tu ubicación para calcular el tiempo de entrega del pedido.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -360,6 +377,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Necesitamos saber tu ubicación para calcular el tiempo de entrega del pedido.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

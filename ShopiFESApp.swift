@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ShopiFESApp: App {
+    @State private var locationManager = LocationManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MapView()
         }
+        .environment(locationManager)
     }
 }
