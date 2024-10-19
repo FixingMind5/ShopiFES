@@ -19,6 +19,8 @@
 		C68A06A82C855C8300B566D2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06A72C855C8300B566D2 /* ProfileView.swift */; };
 		C68A06AA2C855C9C00B566D2 /* ShoppingCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06A92C855C9C00B566D2 /* ShoppingCartView.swift */; };
 		C68A06AE2C85695300B566D2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06AD2C85695300B566D2 /* Model.swift */; };
+		DF70B3002CC32C0100F45825 /* MTPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70B2FF2CC32BFB00F45825 /* MTPlacemark.swift */; };
+		DF70B3022CC32CCA00F45825 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF70B3012CC32CCA00F45825 /* Destination.swift */; };
 		DF9759032CB8E40F00C3A891 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9759022CB8E40800C3A891 /* MapView.swift */; };
 		DF9759092CB90DDE00C3A891 /* LocationDeniedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		C68A06A72C855C8300B566D2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C68A06A92C855C9C00B566D2 /* ShoppingCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartView.swift; sourceTree = "<group>"; };
 		C68A06AD2C85695300B566D2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		DF70B2FF2CC32BFB00F45825 /* MTPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTPlacemark.swift; sourceTree = "<group>"; };
+		DF70B3012CC32CCA00F45825 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		DF9759022CB8E40800C3A891 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDeniedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +118,10 @@
 		C68A06AC2C85693A00B566D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DF70B2FF2CC32BFB00F45825 /* MTPlacemark.swift */,
 				C68A06AD2C85695300B566D2 /* Model.swift */,
 				C601A2072C93BBF6003D793C /* menu.swift */,
+				DF70B3012CC32CCA00F45825 /* Destination.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -151,7 +157,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
-				LastUpgradeCheck = 1520;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					C68A068C2C85327F00B566D2 = {
 						CreatedOnToolsVersion = 15.2;
@@ -196,6 +202,7 @@
 				C601A2082C93BBF6003D793C /* menu.swift in Sources */,
 				DF9759092CB90DDE00C3A891 /* LocationDeniedView.swift in Sources */,
 				C68A06AE2C85695300B566D2 /* Model.swift in Sources */,
+				DF70B3002CC32C0100F45825 /* MTPlacemark.swift in Sources */,
 				C68A06A22C854F7400B566D2 /* SignupView.swift in Sources */,
 				DF9759032CB8E40F00C3A891 /* MapView.swift in Sources */,
 				C68A06A02C853F5800B566D2 /* LoginView.swift in Sources */,
@@ -204,6 +211,7 @@
 				C68A06A62C855C7200B566D2 /* SearchView.swift in Sources */,
 				C68A06A82C855C8300B566D2 /* ProfileView.swift in Sources */,
 				C68A06AA2C855C9C00B566D2 /* ShoppingCartView.swift in Sources */,
+				DF70B3022CC32CCA00F45825 /* Destination.swift in Sources */,
 				C68A06912C85327F00B566D2 /* ShopiFESApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +253,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -306,6 +315,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -333,6 +343,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShopiFES/ShopiFES.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopiFES/Preview Content\"";
 				DEVELOPMENT_TEAM = 93Z932827W;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -372,6 +383,7 @@
 				CODE_SIGN_ENTITLEMENTS = ShopiFES/ShopiFES.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"ShopiFES/Preview Content\"";
 				DEVELOPMENT_TEAM = 93Z932827W;
 				ENABLE_HARDENED_RUNTIME = YES;
