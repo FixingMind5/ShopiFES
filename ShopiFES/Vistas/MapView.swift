@@ -12,6 +12,9 @@ import SwiftData
 struct MapView: View {
     @Environment(LocationManager.self) var locationManager
     // @State private var cameraPosition: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    @Query private var destinations: [Destination]
+    @State private var destination: Destination?
     @Query private var listPlacemarks: [MTPlacemark]
     @State private var cameraPosition: MapCameraPosition = .automatic
     
@@ -26,11 +29,20 @@ struct MapView: View {
     @State private var travelInterval: TimeInterval?
     @State private var transportType = MKDirectionsTransportType.automobile
     
+    var travelTime: String? {
+        guard let travelInterval else { return nil }
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour, .minute]
+        
+        return formatter.string(for: travelInterval)
+    }
+    
     var body: some View {
         
         if locationManager.isAuthorized
         {
-            Map(position: $cameraPosition)
+            Map(position: $cameraPosition, selection: $selectedPlacemark)
             {
                 UserAnnotation()
                 ForEach(listPlacemarks) { placemark in
@@ -58,11 +70,27 @@ struct MapView: View {
                         .stroke(.blue, lineWidth: 6)
                 }
             }
+            .sheet(item: $selectedPlacemark, content: { selectedPlacemark in
+                Text("\(selectedPlacemark.name)")
+                    .presentationDetents([.height(450)])
+                Button("Mostrar ruta", systemImage: "location.nort") {
+                    showRoute.toggle()
+                }
+                .fixedSize(horizontal: true, vertical: false)
+            })
             .onAppear {
-                let acatlan_center = CLLocationCoordinate2D( latitude: 19.484270570957435, longitude: -99.24605098624986)
+                destination = destinations.first
+                
+                if let region = destination?.region {
+                    cameraPosition = .region(region)
+                }
+                
+                /*
+                 let acatlan_center = CLLocationCoordinate2D( latitude: 19.484270570957435, longitude: -99.24605098624986)
                 let acatlan_span = MKCoordinateSpan(latitudeDelta: 0.0075, longitudeDelta: 0.0075)
                 let acatlan_region = MKCoordinateRegion(center: acatlan_center, span: acatlan_span)
                 cameraPosition = .region(acatlan_region)
+                 */
             }
             .mapControls {
                 MapUserLocationButton()
@@ -86,6 +114,24 @@ struct MapView: View {
                     }
                 }
             }
+            /*
+            .task(id: transportType, {
+                await fetchRoute()
+            })
+            */
+            .safeAreaInset(edge: .bottom, content: {
+                if routeDisplaying {
+                    HStack {
+                        Button("Borrar ruta", systemImage: "xmark.circle") {
+                            removeRoute()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .fixedSize(horizontal: true, vertical: false)
+                        
+                        Text("El tiempo de llegada es: \(travelTime ?? "No hay valor")")
+                    }
+                }
+            })
             
             
         } else {
@@ -126,9 +172,20 @@ struct MapView: View {
             travelInterval = route?.expectedTravelTime
         }
     }
+    
+    func removeRoute() {
+        routeDisplaying = false
+        showRoute = false
+        route = nil
+        selectedPlacemark = nil
+        if let userLocation = locationManager.userLocation {
+            updateCameraPosition()
+        }
+    }
 }
 
 #Preview {
     MapView()
         .environment(LocationManager())
+        .modelContainer(Destination.preview)
 }

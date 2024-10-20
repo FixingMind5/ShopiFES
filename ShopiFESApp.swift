@@ -15,5 +15,6 @@ struct ShopiFESApp: App {
             MapView()
         }
         .environment(locationManager)
+        .modelContainer(Destination.preview)
     }
 }
