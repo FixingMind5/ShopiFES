@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A7FD4E32CC5D98F007DCCDC /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FD4E22CC5D986007DCCDC /* ProductDetailView.swift */; };
+		3A7FD4E52CC6002C007DCCDC /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FD4E42CC60026007DCCDC /* HeaderView.swift */; };
 		C601A2082C93BBF6003D793C /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C601A2072C93BBF6003D793C /* menu.swift */; };
 		C68A06912C85327F00B566D2 /* ShopiFESApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06902C85327F00B566D2 /* ShopiFESApp.swift */; };
 		C68A06932C85327F00B566D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A06922C85327F00B566D2 /* ContentView.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A7FD4E22CC5D986007DCCDC /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
+		3A7FD4E42CC60026007DCCDC /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		C601A2072C93BBF6003D793C /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
 		C68A068D2C85327F00B566D2 /* ShopiFES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopiFES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68A06902C85327F00B566D2 /* ShopiFESApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopiFESApp.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				C68A069F2C853F5800B566D2 /* LoginView.swift */,
 				C68A06A12C854F7400B566D2 /* SignupView.swift */,
 				C68A06A32C855BFC00B566D2 /* HomeView.swift */,
+				3A7FD4E42CC60026007DCCDC /* HeaderView.swift */,
+				3A7FD4E22CC5D986007DCCDC /* ProductDetailView.swift */,
 				DF9759082CB90DDE00C3A891 /* LocationDeniedView.swift */,
 			);
 			path = Vistas;
@@ -200,8 +206,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C601A2082C93BBF6003D793C /* menu.swift in Sources */,
+				3A7FD4E52CC6002C007DCCDC /* HeaderView.swift in Sources */,
 				DF9759092CB90DDE00C3A891 /* LocationDeniedView.swift in Sources */,
 				C68A06AE2C85695300B566D2 /* Model.swift in Sources */,
+				3A7FD4E32CC5D98F007DCCDC /* ProductDetailView.swift in Sources */,
 				DF70B3002CC32C0100F45825 /* MTPlacemark.swift in Sources */,
 				C68A06A22C854F7400B566D2 /* SignupView.swift in Sources */,
 				DF9759032CB8E40F00C3A891 /* MapView.swift in Sources */,
@@ -341,6 +349,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopiFES/ShopiFES.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -363,7 +372,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fixingmind5.ShopiFES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -381,6 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ShopiFES/ShopiFES.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -403,7 +413,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = fixingmind5.ShopiFES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

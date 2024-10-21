@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct ShopiFESApp: App {
     @State private var locationManager = LocationManager()
+    
     var body: some Scene {
         WindowGroup {
-            MapView()
+            //MapView()
+            HomeView()
+            //ContentView()
         }
-        .environment(locationManager)
-        .modelContainer(Destination.preview)
+        //.environment(locationManager)
+        //.modelContainer(Destination.preview)
     }
 }

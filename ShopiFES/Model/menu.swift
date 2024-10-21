@@ -21,7 +21,7 @@ var productos: [Product] = [
         image: "Tote_bag"
     ),
     Product(
-        name: "Bolis de mango",
+        name: "Girasoles",
         precio: 10.0,
         descripcion: "Venta de girasoles y rosas amarillas! \n Girasol pequeño en $48 el pequeño, grande en $80 y rosas en $45 💛💫 \n Por ramo el precio cambia.🫶",
         image: "Girasol"

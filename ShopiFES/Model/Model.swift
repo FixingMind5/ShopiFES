@@ -14,18 +14,27 @@ struct Product : Identifiable, Codable {
     var precio: Double
     var descripcion: String
     var image: String
+    var number: Int = 1
     
     init(name: String, descripcion: String, precio: Double, image: String = "No image") {
-            self.name = name
-            self.descripcion = descripcion
-            self.precio = precio
-            self.image = image
-        }
+        self.name = name
+        self.descripcion = descripcion
+        self.precio = precio
+        self.image = image
+    }
     
     init(name: String, precio: Double, descripcion: String, image: String = "No image") {
-            self.name = name
-            self.descripcion = descripcion
-            self.precio = precio
-            self.image = image
-        }
+        self.name = name
+        self.descripcion = descripcion
+        self.precio = precio
+        self.image = image
+    }
+    
+    init(name: String, precio: Double, descripcion: String, image: String = "No image", number: Int) {
+        self.name = name
+        self.descripcion = descripcion
+        self.precio = precio
+        self.image = image
+        self.number = number
+    }
 }
