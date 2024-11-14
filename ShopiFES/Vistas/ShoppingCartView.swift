@@ -89,7 +89,7 @@ struct ShoppingCartView: View {
                     Spacer()
                     
                     NavigationLink {
-                        MapView()
+                        OrderView(totalCarrito: totalCarrito)
                             .environment(locationManager)
                             .modelContainer(Destination.preview)
                     } label: {
